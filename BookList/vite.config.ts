@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/BookList/',  
-  // @ts-expect-error
+  // @ts-expect-error: test is not being found
   test: {
     globals: true,
     environment: 'jsdom',

@@ -8,14 +8,18 @@ export default function App() {
   const [books, setBooks] = useState<Book[]>([]);
 
   const loadBooks = async () => {
+  const data = await getBooks();
+  setBooks(data);
+};
+
+useEffect(() => {
+  const fetchData = async () => {
     const data = await getBooks();
     setBooks(data);
   };
 
-  useEffect(() => {
-    loadBooks();
-  }, []);
-
+  fetchData();
+}, []);
   const handleAdd = async (book: Omit<Book, "_id">) => {
     await addBook(book);
     loadBooks();

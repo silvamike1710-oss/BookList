@@ -63,3 +63,8 @@ interface Book {
   author: string;
   status: BookStatus;
 }
+# BookList
+
+ **Site publicado:** [https://silvamike1710-oss.github.io/BookList/](https://silvamike1710-oss.github.io/BookList/)
+
+[![CI/CD Pipeline](https://github.com/silvamike1710-oss/BookList/actions/workflows/main.yml/badge.svg)](https://github.com/silvamike1710-oss/BookList/actions/workflows/main.yml)

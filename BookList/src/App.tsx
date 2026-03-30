@@ -7,14 +7,14 @@ import BookList from "./components/BookList";
 export default function App() {
   const [books, setBooks] = useState<Book[]>([]);
 
-  useEffect(() => {
-    loadBooks();
-  }, []);
-
   const loadBooks = async () => {
     const data = await getBooks();
     setBooks(data);
   };
+
+  useEffect(() => {
+    loadBooks();
+  }, []);
 
   const handleAdd = async (book: Omit<Book, "_id">) => {
     await addBook(book);
@@ -35,7 +35,7 @@ export default function App() {
     await updateBook(updated);
     loadBooks();
   };
-  
+
   return (
     <div>
       <h1>Lista de Livros</h1>
@@ -47,5 +47,4 @@ export default function App() {
       />
     </div>
   );
-
 }
